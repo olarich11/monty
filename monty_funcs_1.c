@@ -1,4 +1,7 @@
 #include "monty.h"
+#include <stdio.h>
+
+char **op_toks = NULL;
 
 void monty_push(stack_t **stack, unsigned int line_number);
 void monty_pall(stack_t **stack, unsigned int line_number);
@@ -50,7 +53,7 @@ void monty_push(stack_t **stack, unsigned int line_number)
 			tmp->prev = new;
 		(*stack)->next = new;
 	}
-	else /* QUEUE mode insert at end */
+	else
 	{
 		tmp = *stack;
 		while (tmp->next)
